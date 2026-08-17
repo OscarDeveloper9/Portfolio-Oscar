@@ -1,6 +1,6 @@
 :root {
-  --bg-start: #fff9f2;
-  --bg-end: #fdecdf;
+  --bg-start: #fdfbf4;
+  --bg-end: #f1e6cf;
   --surface: #ffffff;
 
   --ink: #2e2a35;
@@ -19,8 +19,6 @@
   --teal-light: #d7f4ef;
   --blue: #3b7ef6;
   --blue-light: #e3ecff;
-  --pink: #ec4899;
-  --pink-light: #fde3f0;
   --amber: #d97706;
   --amber-light: #fef0d9;
 
