@@ -6,12 +6,21 @@ const statusLabel = {
 function ProjectCard({ project }) {
   const primaryUrl = project.status === "live" ? project.demoUrl : project.githubUrl;
 
+  const handlePointerMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const mx = ((e.clientX - rect.left) / rect.width) * 100;
+    const my = ((e.clientY - rect.top) / rect.height) * 100;
+    e.currentTarget.style.setProperty("--mx", `${mx}%`);
+    e.currentTarget.style.setProperty("--my", `${my}%`);
+  };
+
   return (
     <a
       href={primaryUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={`project-card accent-${project.accent}`}
+      onPointerMove={handlePointerMove}
     >
       <div className="project-card-top">
         <span className={`status-dot status-${project.status}`} />
@@ -30,7 +39,12 @@ function ProjectCard({ project }) {
 
       <div className="project-actions">
         <span className="project-cta">
-          {project.status === "live" ? "Ver demo →" : "Ver código →"}
+          <span className="project-cta-label">
+            {project.status === "live" ? "Ver demo" : "Ver código"}
+          </span>
+          <span className="project-cta-arrow" aria-hidden="true">
+            →
+          </span>
         </span>
         {project.status === "live" && (
           <a

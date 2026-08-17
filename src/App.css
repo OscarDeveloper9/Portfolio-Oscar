@@ -22,9 +22,9 @@
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--yellow-400);
-  background: rgba(251, 191, 36, 0.1);
-  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: var(--coral);
+  background: var(--coral-light);
+  border: 1px solid rgba(255, 111, 89, 0.25);
   padding: 6px 14px;
   border-radius: 999px;
   margin-bottom: 24px;
@@ -40,7 +40,7 @@
 .hero-role {
   font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 700;
-  color: var(--yellow-400);
+  color: var(--coral);
   margin-bottom: 6px;
 }
 
@@ -69,24 +69,28 @@
   padding: 10px 22px;
   border-radius: 10px;
   border: 1px solid var(--border-soft);
+  background: var(--surface);
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.2s;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease), background 0.25s var(--ease);
+  box-shadow: var(--shadow-soft);
 }
 
 .hero-link:hover {
-  border-color: var(--yellow-400);
-  transform: translateY(-1px);
+  border-color: var(--coral);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(46, 42, 53, 0.12);
 }
 
 .hero-link.primary {
-  background: var(--yellow-500);
-  color: var(--ink);
-  border-color: var(--yellow-500);
+  background: var(--coral);
+  color: #fff;
+  border-color: var(--coral);
 }
 
 .hero-link.primary:hover {
-  background: var(--yellow-400);
+  background: #ff5940;
 }
 
 /* ── Secciones ────────────────────────────── */
@@ -121,9 +125,18 @@
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 999px;
-  background: var(--surface-overlay);
+  background: var(--surface);
   border: 1px solid var(--border-soft);
-  color: var(--violet-100);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+
+.skill-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--coral);
+  color: var(--coral);
 }
 
 /* ── Panel de proyectos ───────────────────── */
@@ -147,40 +160,84 @@
 .project-card {
   display: flex;
   flex-direction: column;
-  background: var(--surface-overlay);
+  background: var(--surface);
   border: 1px solid var(--border-soft);
   border-radius: 18px;
   padding: 24px;
-  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  will-change: transform;
 }
 
 .project-card::before {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
-  height: 3px;
-  background: var(--accent-color, var(--yellow-500));
+  height: 4px;
+  background: var(--accent-color, var(--coral));
+  transition: height 0.3s var(--ease);
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    480px circle at var(--mx, 50%) var(--my, 0%),
+    color-mix(in srgb, var(--accent-color, var(--coral)) 12%, transparent),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+  pointer-events: none;
 }
 
 .project-card.accent-yellow {
-  --accent-color: var(--yellow-500);
+  --accent-color: var(--coral);
+  --accent-bg: var(--coral-light);
 }
 .project-card.accent-violet {
-  --accent-color: var(--violet-400);
+  --accent-color: var(--pink);
+  --accent-bg: var(--pink-light);
 }
 .project-card.accent-green {
-  --accent-color: var(--green-400);
+  --accent-color: var(--teal);
+  --accent-bg: var(--teal-light);
 }
 .project-card.accent-blue {
-  --accent-color: var(--blue-400);
+  --accent-color: var(--blue);
+  --accent-bg: var(--blue-light);
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent-color, var(--yellow-500));
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  transform: translateY(-6px) scale(1.012);
+  border-color: var(--accent-color, var(--coral));
+  box-shadow: 0 20px 40px -8px rgba(46, 42, 53, 0.18),
+    0 0 0 1px color-mix(in srgb, var(--accent-color, var(--coral)) 25%, transparent);
+}
+
+.project-card:hover::before {
+  height: 6px;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+.project-card:active {
+  transform: translateY(-3px) scale(1.005);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card::before,
+  .project-card::after,
+  .project-cta-arrow {
+    transition: none;
+  }
 }
 
 .project-card-top {
@@ -197,8 +254,19 @@
 }
 
 .status-dot.status-live {
-  background: var(--green-400);
-  box-shadow: 0 0 0 3px rgba(134, 239, 172, 0.2);
+  background: var(--green-live);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16);
+  animation: pulse-live 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-live {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.08);
+  }
 }
 
 .status-dot.status-soon {
@@ -217,11 +285,16 @@
   font-size: 19px;
   font-weight: 700;
   margin-bottom: 2px;
+  transition: color 0.3s var(--ease);
+}
+
+.project-card:hover .project-title {
+  color: var(--accent-color, var(--coral));
 }
 
 .project-subtitle {
   font-size: 13px;
-  color: var(--accent-color, var(--yellow-400));
+  color: var(--accent-color, var(--coral));
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -248,8 +321,8 @@
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text-muted);
+  background: var(--accent-bg, var(--coral-light));
+  color: var(--ink);
 }
 
 .project-actions {
@@ -259,9 +332,21 @@
 }
 
 .project-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-size: 14px;
   font-weight: 700;
-  color: var(--accent-color, var(--yellow-400));
+  color: var(--accent-color, var(--coral));
+}
+
+.project-cta-arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--ease);
+}
+
+.project-card:hover .project-cta-arrow {
+  transform: translateX(4px);
 }
 
 .project-code-link {
@@ -272,7 +357,7 @@
 }
 
 .project-code-link:hover {
-  color: var(--cream);
+  color: var(--ink);
 }
 
 /* ── Footer ───────────────────────────────── */
@@ -284,7 +369,7 @@
 }
 
 .site-footer a {
-  color: var(--yellow-400);
+  color: var(--coral);
   font-weight: 600;
 }
 
