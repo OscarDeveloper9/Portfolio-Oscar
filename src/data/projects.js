@@ -21,7 +21,7 @@ export const projects = [
     demoUrl:
       "https://wanted-app-vitasse-oscar-kbyb1neu4-oscars-projects-ac0b204c.vercel.app/",
     githubUrl: "https://github.com/OscarDeveloper9/Wanted-App-VitasseOscar-JS",
-    accent: "violet",
+    accent: "amber",
     status: "live",
   },
   {

@@ -199,9 +199,9 @@
   --accent-color: var(--coral);
   --accent-bg: var(--coral-light);
 }
-.project-card.accent-violet {
-  --accent-color: var(--pink);
-  --accent-bg: var(--pink-light);
+.project-card.accent-amber {
+  --accent-color: var(--amber);
+  --accent-bg: var(--amber-light);
 }
 .project-card.accent-green {
   --accent-color: var(--teal);

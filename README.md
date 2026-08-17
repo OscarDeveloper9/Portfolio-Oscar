@@ -5,7 +5,7 @@ Página personal para mostrar mis proyectos, construida con React + Vite.
 ## Stack
 
 - React 19 + Vite
-- CSS puro (sin librerías de UI), con la misma paleta de [Wanted-App](https://github.com/OscarDeveloper9/Wanted-App)
+- CSS puro (sin librerías de UI), con paleta propia en tonos cálidos y claros (crema, coral, teal, azul y ámbar)
 
 ## Desarrollo local
 
