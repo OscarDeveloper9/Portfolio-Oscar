@@ -22,9 +22,9 @@
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--coral);
-  background: var(--coral-light);
-  border: 1px solid rgba(255, 111, 89, 0.25);
+  color: var(--yellow-400);
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.25);
   padding: 6px 14px;
   border-radius: 999px;
   margin-bottom: 24px;
@@ -40,7 +40,7 @@
 .hero-role {
   font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 700;
-  color: var(--coral);
+  color: var(--yellow-400);
   margin-bottom: 6px;
 }
 
@@ -69,26 +69,24 @@
   padding: 10px 22px;
   border-radius: 10px;
   border: 1px solid var(--border-soft);
-  background: var(--surface);
   font-size: 14px;
   font-weight: 600;
   transition: all 0.2s;
-  box-shadow: var(--shadow-soft);
 }
 
 .hero-link:hover {
-  border-color: var(--coral);
+  border-color: var(--yellow-400);
   transform: translateY(-1px);
 }
 
 .hero-link.primary {
-  background: var(--coral);
-  color: #fff;
-  border-color: var(--coral);
+  background: var(--yellow-500);
+  color: var(--ink);
+  border-color: var(--yellow-500);
 }
 
 .hero-link.primary:hover {
-  background: #ff5940;
+  background: var(--yellow-400);
 }
 
 /* ── Secciones ────────────────────────────── */
@@ -123,10 +121,9 @@
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 999px;
-  background: var(--surface);
+  background: var(--surface-overlay);
   border: 1px solid var(--border-soft);
-  color: var(--ink);
-  box-shadow: var(--shadow-soft);
+  color: var(--violet-100);
 }
 
 /* ── Panel de proyectos ───────────────────── */
@@ -150,45 +147,40 @@
 .project-card {
   display: flex;
   flex-direction: column;
-  background: var(--surface);
+  background: var(--surface-overlay);
   border: 1px solid var(--border-soft);
   border-radius: 18px;
   padding: 24px;
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-soft);
 }
 
 .project-card::before {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
-  height: 4px;
-  background: var(--accent-color, var(--coral));
+  height: 3px;
+  background: var(--accent-color, var(--yellow-500));
 }
 
 .project-card.accent-yellow {
-  --accent-color: var(--coral);
-  --accent-bg: var(--coral-light);
+  --accent-color: var(--yellow-500);
 }
 .project-card.accent-violet {
-  --accent-color: var(--pink);
-  --accent-bg: var(--pink-light);
+  --accent-color: var(--violet-400);
 }
 .project-card.accent-green {
-  --accent-color: var(--teal);
-  --accent-bg: var(--teal-light);
+  --accent-color: var(--green-400);
 }
 .project-card.accent-blue {
-  --accent-color: var(--blue);
-  --accent-bg: var(--blue-light);
+  --accent-color: var(--blue-400);
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent-color, var(--coral));
-  box-shadow: 0 16px 32px rgba(46, 42, 53, 0.14);
+  border-color: var(--accent-color, var(--yellow-500));
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 .project-card-top {
@@ -205,8 +197,8 @@
 }
 
 .status-dot.status-live {
-  background: var(--green-live);
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16);
+  background: var(--green-400);
+  box-shadow: 0 0 0 3px rgba(134, 239, 172, 0.2);
 }
 
 .status-dot.status-soon {
@@ -229,7 +221,7 @@
 
 .project-subtitle {
   font-size: 13px;
-  color: var(--accent-color, var(--coral));
+  color: var(--accent-color, var(--yellow-400));
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -256,8 +248,8 @@
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 999px;
-  background: var(--accent-bg, var(--coral-light));
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
 }
 
 .project-actions {
@@ -269,7 +261,7 @@
 .project-cta {
   font-size: 14px;
   font-weight: 700;
-  color: var(--accent-color, var(--coral));
+  color: var(--accent-color, var(--yellow-400));
 }
 
 .project-code-link {
@@ -280,7 +272,7 @@
 }
 
 .project-code-link:hover {
-  color: var(--ink);
+  color: var(--cream);
 }
 
 /* ── Footer ───────────────────────────────── */
@@ -292,7 +284,7 @@
 }
 
 .site-footer a {
-  color: var(--coral);
+  color: var(--yellow-400);
   font-weight: 600;
 }
 

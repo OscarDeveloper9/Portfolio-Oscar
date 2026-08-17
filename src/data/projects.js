@@ -39,14 +39,14 @@ export const projects = [
   {
     id: "primeros-pasos",
     title: "Primeros-pasos-en-programacion",
-    subtitle: "Panel de ejercicios DAW",
+    subtitle: "37 ejercicios de fundamentos",
     description:
-      "32 ejercicios de HTML, CSS y JavaScript puro (16 + 16): maquetación semántica, formularios, flexbox, relojes en tiempo real, galerías, sliders y componentes dinámicos.",
+      "Panel de ejercicios de HTML, CSS y JavaScript puro, organizados como sitio estático.",
     tags: ["HTML", "CSS", "JavaScript"],
     demoUrl: "https://oscardeveloper9.github.io/Primeros-pasos-en-programacion/",
     githubUrl: "https://github.com/OscarDeveloper9/Primeros-pasos-en-programacion",
     accent: "blue",
-    status: "live",
+    status: "soon",
   },
 ];
 
