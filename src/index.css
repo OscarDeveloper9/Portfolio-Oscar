@@ -1,0 +1,77 @@
+:root {
+  --bg-start: #fff9f2;
+  --bg-end: #fdecdf;
+  --surface: #ffffff;
+
+  --ink: #2e2a35;
+  --cream: #2e2a35;
+
+  --text-muted: rgba(46, 42, 53, 0.64);
+  --text-soft: rgba(46, 42, 53, 0.44);
+  --border-soft: rgba(46, 42, 53, 0.1);
+  --surface-overlay: #ffffff;
+  --shadow-soft: 0 10px 30px rgba(46, 42, 53, 0.08);
+
+  /* acentos cálidos */
+  --coral: #ff6f59;
+  --coral-light: #ffe6de;
+  --teal: #0d9488;
+  --teal-light: #d7f4ef;
+  --blue: #3b7ef6;
+  --blue-light: #e3ecff;
+  --pink: #ec4899;
+  --pink-light: #fde3f0;
+  --amber: #f59e0b;
+
+  --green-live: #16a34a;
+
+  color-scheme: light;
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", serif;
+  color: var(--ink);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--coral);
+  color: #fff;
+}

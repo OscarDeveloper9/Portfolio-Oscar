@@ -1,0 +1,307 @@
+.page {
+  padding: 56px 24px 80px;
+}
+
+.page-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ── Hero ─────────────────────────────────── */
+
+.hero {
+  text-align: center;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--border-soft);
+  margin-bottom: 56px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--coral);
+  background: var(--coral-light);
+  border: 1px solid rgba(255, 111, 89, 0.25);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.hero-name {
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+.hero-role {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 700;
+  color: var(--coral);
+  margin-bottom: 6px;
+}
+
+.hero-tagline {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.hero-bio {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-link {
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-link:hover {
+  border-color: var(--coral);
+  transform: translateY(-1px);
+}
+
+.hero-link.primary {
+  background: var(--coral);
+  color: #fff;
+  border-color: var(--coral);
+}
+
+.hero-link.primary:hover {
+  background: #ff5940;
+}
+
+/* ── Secciones ────────────────────────────── */
+
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  font-family: "DM Sans", sans-serif;
+  margin-bottom: 20px;
+}
+
+/* ── Skills ───────────────────────────────── */
+
+.skills {
+  margin-bottom: 56px;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-badge {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ── Panel de proyectos ───────────────────── */
+
+.projects-panel {
+  margin-bottom: 56px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 680px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 24px;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--accent-color, var(--coral));
+}
+
+.project-card.accent-yellow {
+  --accent-color: var(--coral);
+  --accent-bg: var(--coral-light);
+}
+.project-card.accent-violet {
+  --accent-color: var(--pink);
+  --accent-bg: var(--pink-light);
+}
+.project-card.accent-green {
+  --accent-color: var(--teal);
+  --accent-bg: var(--teal-light);
+}
+.project-card.accent-blue {
+  --accent-color: var(--blue);
+  --accent-bg: var(--blue-light);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color, var(--coral));
+  box-shadow: 0 16px 32px rgba(46, 42, 53, 0.14);
+}
+
+.project-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.status-live {
+  background: var(--green-live);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16);
+}
+
+.status-dot.status-soon {
+  background: var(--text-soft);
+}
+
+.project-status {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.project-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.project-subtitle {
+  font-size: 13px;
+  color: var(--accent-color, var(--coral));
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.project-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.project-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.project-tags li {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-bg, var(--coral-light));
+  color: var(--ink);
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-cta {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-color, var(--coral));
+}
+
+.project-code-link {
+  font-size: 13px;
+  color: var(--text-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.project-code-link:hover {
+  color: var(--ink);
+}
+
+/* ── Footer ───────────────────────────────── */
+
+.site-footer {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.site-footer a {
+  color: var(--coral);
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-soft);
+}
