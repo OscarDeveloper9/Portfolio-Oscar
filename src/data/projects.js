@@ -34,7 +34,7 @@ export const projects = [
     demoUrl: "https://oscardeveloper9.github.io/Alien-Invasion-Py/",
     githubUrl: "https://github.com/OscarDeveloper9/Alien-Invasion-Py",
     accent: "green",
-    status: "soon",
+    status: "live",
   },
   {
     id: "primeros-pasos",
